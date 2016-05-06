@@ -1,3 +1,10 @@
+//Code to produce word cloud
+//parameters for cloud width, height, margins to the edge of the svg container
+//input data needs to be in simple string format
+
+//requires d3.layout.cloud.js
+//https://jardindesconnaissances.googlecode.com/svn-history/r82/trunk/public/js/d3.layout.cloud.js
+
 var wordCloudModule = function() {
 	var scale, words, width, height,margin, color;
 	
@@ -6,14 +13,12 @@ var wordCloudModule = function() {
 	height = 350;
 	margin=50;
 	scale=5;
+	//red to black
+	//use hex color values
 	minColor = "#ff0000"
 	maxColor = "#000000"
 
-	//default color scale
-	var color = d3.scale.linear()
-             .domain([0,1,2,3,4,5,6,10,15,20,100])
-             .range(["#ddd", "#ccc", "#bbb", "#aaa", "#999", "#888", "#777", "#666", "#555", "#444", "#333", "#222"]);
-
+	//call to create chart
 	var chart = function(selection){
 		selection.each(function(data,index){
 			var toRender = d3.select(this);
@@ -33,6 +38,9 @@ var wordCloudModule = function() {
 		})   
 	}
 
+
+	//getter setter functions for all values
+	//color values are defined in hex: max color is the color of words most often shown
 	chart.maxColor = function(value){
 		if(!arguments.length) return maxColor;
 		maxColor = value;
@@ -45,18 +53,21 @@ var wordCloudModule = function() {
 		return this;
 	};
 
+	//how big do you want the words to be
 	chart.scale = function(value){
 		if(!arguments.length) return scale;
 		scale = value;
 		return this;
 	};
 
+	//define gap from svg edge to start of wordcloud. applies evenly to all 4 sides
 	chart.margin = function(value){
 		if(!arguments.length) return margin;
 		margin = value;
 		return this;
 	};
 
+	//change data of cloud
 	chart.words = function(value){
 		if(!arguments.length) return words;
 		words = value;
