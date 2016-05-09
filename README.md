@@ -14,24 +14,24 @@ Input text needs to be in the format of a simple string: words separated by spac
 
 The following functions are exposed to the user:
 
-** Word Cloud Width **
+**Word Cloud Width**
 Set the width of the word cloud. Note that setting a width wider than containing element
 will result in missing words.
 
-** Word Cloud Height **
+**Word Cloud Height**
 Set the height of word cloud. Note that setting a height greater than containing element
 results in missing words.
 
-** Word Cloud Word Occurence Coloring: Max Color **
+**Word Cloud Word Occurence Coloring: Max Color**
 Set the color of the most often occurring word in the cloud. Max color and min color establish gradient bounding points.
 
-** Word Cloud Word Occurence Coloring: Min Color **
+**Word Cloud Word Occurence Coloring: Min Color**
 Set the color of the least often occurring word in the cloud.
 
-** Word Cloud Word Scale **
+**Word Cloud Word Scale**
 Set the relative size of words all words. Note that this needs to be adjusted to tune with the number of words and size of the word cloud to optimize readability.
 
-** Word Cloud Margin **
+**Word Cloud Margin**
 Set the margin from the container given to the beginning of the word cloud. Use if there are any elements surrounding the word cloud to avoid obscuring them.
 
 
